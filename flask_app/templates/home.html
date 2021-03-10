@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+
+
+{% block content %}
+
+<div class='menu1'>
+    <nav class="nav flex-column">
+        <a  style="color: rgb(0, 128, 128); margin-top: 10%; font-family:Verdana" class="btn btn-dark btn-lg" href="liste" ><i class="fas fa-list-alt"></i>    Full List </a>
+      </nav>
+</div>
+
+<div class="box1">
+  {% for ligne in limitated_tasks_user %} 
+      <div class="task">
+
+        <div class="mark"></div>
+        <div class="name_task"> <h4 style="display: inline-flex;">{{ ligne['title'] }}</h4> </div>
+        <div class="date_end"> <h4>{{ ligne['due_date'] }}</h4></div>
+      </div>
+      <div>
+      </div>
+  {% endfor %}    
+</div>
+
+
+{% endblock %}
